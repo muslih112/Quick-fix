@@ -1,42 +1,36 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+.toggle-switch {
+    display: none; /* Hide the actual checkbox */
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.toggle-label {
+    display: block;
+    width: 36px;
+    height: 16px;
+    background-color: #ccc;
+    border-radius: 10px;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.toggle-label::before {
+    content: '';
+    position: absolute;
+    width: 13px;
+    height: 12px;
+    background-color: white;
+    border-radius: 50%;
+    top: 2px;
+    left: 2px;
+    transition: left 0.3s;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.toggle-switch:checked + .toggle-label {
+    background-color: #0A770C; /* Green when checked */
 }
 
-.card {
-  padding: 2em;
+.toggle-switch:checked + .toggle-label::before {
+    left: 22px; /* Move the circle to the right when checked */
 }
 
-.read-the-docs {
-  color: #888;
-}
+
